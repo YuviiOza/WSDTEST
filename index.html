@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dog Buddy Website</title>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="Gpt.css">
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets\Images\Logo.png" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="cta">Adopt</a></li>
+            </ul>
+        </nav>
+        <!-- MAIN SCROLL 1 -->
+        <div id="MainScroll1">
+            <div id="MainScroll1TextDiv">
+                <div id="HeadingText">
+                    <H1>The<br>
+                        Welfare of<Br>
+                        Stray Dogs</H1>
+                </div>
+                <div id="ParaText">
+                    <p>is a non-profit trust dedicated to helping street dogs.<br>
+                        It was established and registered in 1985, so as to stop<br> the mass culling of street dogs by
+                        the Brihanmumbai<br> Municipal
+                        Corporation.</p>
+                </div>
+                <div id="CtaBtnText">
+                    <button>Know More</button>
+                </div>
+            </div>
+            <div id="MainScroll1PhotoDiv">
+                <img src="assets\Images\BannerDog.png">
+            </div>
+        </div>
+        <!-- SECOND SCROLL  -->
+        <!-- WHAT WE DO -->
+        <!-- <div id="WhatWeDoDiv">
+            <div id="WhatWeDoHeading">
+                <h2>What We Do</h2>
+            </div>
+            <div id="WhatWeDoOptions">
+                <div id="MassSter">
+
+                </div>
+            </div>
+        </div> -->
+        <div class="what-we-do">
+            <div class="section-heading">What We Do</div>
+
+            <div class="accordion-container">
+                <!-- Mass Sterilisation (Initially Open) -->
+                <div class="accordion-item active" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">Mass Sterilisation</div>
+                    <div class="accordion-content">
+                        <div class="text-section">
+                            <h2>Mass Sterilisation</h2>
+                            <p>Our sterilisation program follows WHO and Animal Welfare Board guidelines...</p>
+                            <span class="read-more">Know More</span>
+                        </div>
+                        <div class="image-section">
+                            <img src="assets\Images\mass-steralisation.png" alt="Mass Sterilisation">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rabies Vaccination -->
+                <div class="accordion-item" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">Rabies Vaccination</div>
+                    <div class="accordion-content">
+                        <div class="text-section">
+                            <h2>Rabies Vaccination</h2>
+                            <p>Providing free rabies vaccination to street dogs to prevent rabies outbreaks...</p>
+                            <span class="read-more">Know More</span>
+                        </div>
+                        <div class="image-section">
+                            <img src="assets/rabies-vaccination.jpg" alt="Rabies Vaccination">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OPD -->
+                <div class="accordion-item" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">OPD</div>
+                    <div class="accordion-content">
+                        <div class="text-section">
+                            <h2>OPD</h2>
+                            <p>Our Outpatient Department provides medical treatment for stray animals in need...</p>
+                            <span class="read-more">Know More</span>
+                        </div>
+                        <div class="image-section">
+                            <img src="assets/opd.jpg" alt="OPD">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- On-site First Aid -->
+                <div class="accordion-item" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">On-site First Aid</div>
+                    <div class="accordion-content">
+                        <div class="text-section">
+                            <h2>On-site First Aid</h2>
+                            <p>Emergency first aid treatment provided to injured street animals...</p>
+                            <span class="read-more">Know More</span>
+                        </div>
+                        <div class="image-section">
+                            <img src="assets/first-aid.jpg" alt="On-site First Aid">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Care -->
+                <div class="accordion-item" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">Health Care</div>
+                    <div class="accordion-content">
+                        <div class="text-section">
+                            <h2>Health Care</h2>
+                            <p>Ensuring proper medical care for injured and sick animals...</p>
+                            <span class="read-more">Know More</span>
+                        </div>
+                        <div class="image-section">
+                            <img src="assets/health-care.jpg" alt="Health Care">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="accordion-item" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">Education</div>
+                    <div class="accordion-content">
+                        <div class="text-section">
+                            <h2>Education</h2>
+                            <p>Raising awareness about animal welfare among the community...</p>
+                            <span class="read-more">Know More</span>
+                        </div>
+                        <div class="image-section">
+                            <img src="assets/education.jpg" alt="Education">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adoption -->
+                <div class="accordion-item" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">Adoption</div>
+                    <div class="accordion-content">
+                        <div class="text-section">
+                            <h2>Adoption</h2>
+                            <p>Helping stray animals find forever homes through responsible adoption...</p>
+                            <span class="read-more">Know More</span>
+                        </div>
+                        <div class="image-section">
+                            <img src="assets/adoption.jpg" alt="Adoption">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- STATISTICS -->
+        <section id="stats-section">
+            <div class="stats-content">
+                <!-- Left-side Main Count -->
+                <div class="main-stat">
+                    <h1><span class="count" data-target="150000">0</span>*</h1>
+                    <p>Lives Touched</p>
+                </div>
+
+                <!-- Bottom Stats -->
+                <div class="stats">
+                    <div class="stat">
+                        <h2><span class="count" data-target="56500">0</span></h2>
+                        <p>Sterilised</p>
+                    </div>
+                    <div class="stat">
+                        <h2><span class="count" data-target="20000">0</span>+</h2>
+                        <p>Immunized against rabies</p>
+                    </div>
+                    <div class="stat">
+                        <h2><span class="count" data-target="70000">0</span>+</h2>
+                        <p>Treated on site</p>
+                    </div>
+                    <div class="stat">
+                        <h2><span class="count" data-target="600">0</span></h2>
+                        <p>Adoptions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SUPPORT US SECTION -->
+        <section class="support-us-section">
+            <div class="support-us-content">
+                <h2>Support Us</h2>
+                <div class="support-cards-container">
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <img src="assets\Icons\Donation.png" alt="Donation Icon">
+                        </div>
+                        <h3>Make a Donation</h3>
+                        <p>Love for animals is of course what drives volunteers to WSD. But more importantly, it is the
+                            ability to
+                            act rationally and responsibly that makes them truly valuable.</p>
+                        <button class="donate-btn">DONATE</button>
+                    </div>
+
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <img style="height: 60px;" src="assets\Icons\Volunteer.png" alt="Volunteer Icon">
+                        </div>
+                        <h3>Become a Volunteer</h3>
+                        <p>Love for animals is of course what drives volunteers to WSD. But more importantly, it is the
+                            ability to
+                            act rationally and responsibly that makes them truly valuable.</p>
+                        <button class="volunteer-btn">VOLUNTEER</button>
+                    </div>
+
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <img src="assets\Icons\Donation.png" alt="Adopt Icon">
+                        </div>
+                        <h3>Adopt a Buddy</h3>
+                        <p>Love for animals is of course what drives volunteers to WSD. But more importantly, it is the
+                            ability to
+                            act rationally and responsibly that makes them truly valuable.</p>
+                        <button class="adopt-btn">ADOPT</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MEET OUR BUDDIES -->
+        <!-- <Div class="Meet-Our-Buddies-Section">
+            
+             <div class="Mob-Heading">
+                <h2>Meet Our Buddies</h2>
+             </div>
+
+             <div>
+                
+             </div>
+
+        </Div> -->
+        <section class="meet-buddies-section">
+            <h2>Meet Our Buddies</h2>
+            <div class="buddies-carousel-container">
+                <div class="buddies-carousel-track">
+                    <!-- Buddy Cards -->
+                    <div class="buddy-card">
+                        <div class="buddy-image">
+                            <img src="assets/Images/Buddy1.png" alt="Buddy">
+                        </div>
+                        <div class="buddy-details">
+                            <h3>Buddy Name</h3>
+                            <p>Bruno was found injured near Marine Drive, limping from a deep wound. WSD rescued him,
+                                treated his leg, and he now
+                                happily roams a safe community.</p>
+                        </div>
+                    </div>
+
+                    <div class="buddy-card">
+                        <div class="buddy-image">
+                            <img src="assets/Images/Buddy2.png" alt="Buddy">
+                        </div>
+                        <div class="buddy-details">
+                            <h3>Buddy Name</h3>
+                            <p>Bruno was found injured near Marine Drive, limping from a deep wound. WSD rescued him,
+                                treated his leg, and he now
+                                happily roams a safe community.</p>
+                        </div>
+                    </div>
+
+                    <div class="buddy-card">
+                        <div class="buddy-image">
+                            <img src="assets/Images/Buddy3.png" alt="Buddy">
+                        </div>
+                        <div class="buddy-details">
+                            <h3>Buddy Name</h3>
+                            <p>Bruno was found injured near Marine Drive, limping from a deep wound. WSD rescued him,
+                                treated his leg, and he now
+                                happily roams a safe community.</p>
+                        </div>
+                    </div>
+                    <div class="buddy-card">
+                        <div class="buddy-image">
+                            <img src="assets/Images/Buddy1.png" alt="Buddy">
+                        </div>
+                        <div class="buddy-details">
+                            <h3>Buddy Name</h3>
+                            <p>Bruno was found injured near Marine Drive, limping from a deep wound. WSD rescued him,
+                                treated his leg, and he now
+                                happily roams a safe community.</p>
+                        </div>
+                    </div>
+
+                    <div class="buddy-card">
+                        <div class="buddy-image">
+                            <img src="assets/Images/Buddy2.png" alt="Buddy">
+                        </div>
+                        <div class="buddy-details">
+                            <h3>Buddy Name</h3>
+                            <p>Bruno was found injured near Marine Drive, limping from a deep wound. WSD rescued him,
+                                treated his leg, and he now
+                                happily roams a safe community.</p>
+                        </div>
+                    </div>
+
+                    <div class="buddy-card">
+                        <div class="buddy-image">
+                            <img src="assets/Images/Buddy3.png" alt="Buddy">
+                        </div>
+                        <div class="buddy-details">
+                            <h3>Buddy Name</h3>
+                            <p>Bruno was found injured near Marine Drive, limping from a deep wound. WSD rescued him,
+                                treated his leg, and he now
+                                happily roams a safe community.</p>
+                        </div>
+                    </div>
+
+                    <!-- Add more buddy cards as needed -->
+                </div>
+
+                <!-- Navigation Buttons -->
+                <button class="buddies-carousel-prev">&#10094;</button>
+                <button class="buddies-carousel-next">&#10095;</button>
+            </div>
+        </section>
+
+        </div>
+        <!-- OUR TEAM -->
+        <section class="our-team-section">
+            <div class="team-carousel-container">
+                <h2>Our Team</h2>
+                <div class="team-carousel-track">
+                    <!-- Team Member Cards -->
+                    <div class="team-member-card">
+                        <div class="team-member-image">
+                            <img src="assets\Images\Person2.png" alt="Team Member">
+                        </div>
+                        <div class="team-member-details">
+                            <h3>Mr. Abodh Aras</h3>
+                            <p>Founder & CEO</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member-card">
+                        <div class="team-member-image">
+                            <img src="assets\Images\Person1.png" alt="Team Member">
+                        </div>
+                        <div class="team-member-details">
+                            <h3>Mrs. Daisy Sidhwa</h3>
+                            <p>Trustee</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member-card">
+                        <div class="team-member-image">
+                            <img src="assets\Images\Person3.png" alt="Team Member">
+                        </div>
+                        <div class="team-member-details">
+                            <h3>Mrs. Dharmita</h3>
+                            <p>Head of Communications</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member-card">
+                        <div class="team-member-image">
+                            <img src="assets\Images\Person2.png" alt="Team Member">
+                        </div>
+                        <div class="team-member-details">
+                            <h3>Mrs. Dharmita</h3>
+                            <p>Head of Communications</p>
+                        </div>
+                    </div>
+
+
+                    <!-- Add more team members as needed -->
+                </div>
+
+                <!-- Navigation Buttons -->
+                <button class="team-carousel-prev">&#10094;</button>
+                <button class="team-carousel-next">&#10095;</button>
+            </div>
+        </section>
+
+        <footer>
+            <div class="Footer-Main-Div">
+                <div style="display:flex; justify-content: center;" class="Footer-Cards">
+                    <img class="Footer-Logo" src="assets\Images\Logo.png">
+                </div>
+                <div class="Footer-Cards Footer-Address">
+                    <p style="font-size: 27px; font-weight:400">ADDRESS!!</p>
+                    <p>The Welfare of Stray Dogs
+                        C/o Mr F Broacha,
+                        2nd Floor, Yeshwant Chambers
+                        B Bharucha Marg
+                        Kala Ghoda
+                        Mumbai 400 033.</p>
+                </div>
+                <div class="Footer-Cards">
+                    <p style="font-size: 27px; font-weight:400">REACH OUT !!</p>
+                    <p>wsd@wsd.com</p>
+                    <p>+91 98192 46953</p>
+                </div>
+                <div class="Footer-Cards">
+                    <p style="font-size: 27px; font-weight:400">FOLLOW !!</p>
+                    <p>Insta</p>
+                    <p>Facebook</p>
+                    <p>Twitter</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="Landing.js"></script>
+    </body>
+
+</html>
