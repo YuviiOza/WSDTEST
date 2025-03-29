@@ -88,6 +88,7 @@
         flex-direction: column;
         align-items: center;
         padding: 20px 5%;
+        /* justify-content: space-between; */
     }
 
     .nav-links {
@@ -581,8 +582,8 @@
     text-align: left;
     padding: 50px 20px;
     /* background-color: #f9f9f9; */
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1400px;
+    /* margin: 0 auto; */
 }
 
 .meet-buddies-section h2 {
@@ -593,7 +594,7 @@
 
 .buddies-carousel-container {
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .buddies-carousel-track {
@@ -669,7 +670,7 @@
 }
 
 /* Responsive Design */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     .buddies-carousel-track {
         flex-direction: column;
         align-items: center;
@@ -678,6 +679,31 @@
     .buddy-card {
         flex: 0 0 100%;
         max-width: 350px;
+    }
+} */
+ @media screen and (max-width: 768px) {
+    .buddies-carousel-container,
+    .team-carousel-container {
+        overflow: hidden;
+        width: 100%;
+    }
+    .meet-buddies-section h2, .team-carousel-container{
+        text-align: center;
+    }
+
+    .buddies-carousel-track,
+    .team-carousel-track {
+        display: flex;
+        flex-direction: row; /* Ensure horizontal layout */
+        transition: transform 0.5s ease;
+        width: 100%;
+    }
+
+    .buddy-card,
+    .team-member-card {
+        flex: 0 0 100%; /* Each card takes full width */
+        max-width: 100%;
+        margin-right: 0; /* Remove any margins */
     }
 }
 /* OUR TEAM */
@@ -786,14 +812,59 @@
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-    .team-carousel-track {
-        flex-direction: column;
-        align-items: center;
+    /* Buddies Carousel */
+    .meet-buddies-section,
+    .our-team-section {
+        padding: 20px 10px;
     }
 
+    .buddies-carousel-container,
+    .team-carousel-container {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+    }
+
+    .buddies-carousel-track,
+    .team-carousel-track {
+        display: flex;
+        flex-direction: row;
+        transition: transform 0.5s ease;
+        width: 100%;
+    }
+
+    .buddy-card,
     .team-member-card {
         flex: 0 0 100%;
-        max-width: 350px;
+        max-width: 100%;
+        margin-right: 0;
+        padding: 0 10px; /* Optional: add some spacing */
+    }
+
+    /* Navigation Buttons */
+    .buddies-carousel-prev,
+    .buddies-carousel-next,
+    .team-carousel-prev,
+    .team-carousel-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.3);
+        color: white;
+        border: none;
+        padding: 10px;
+        z-index: 10;
+        border-radius: 50%;
+    }
+
+    .buddies-carousel-prev,
+    .team-carousel-prev {
+        left: 10px;
+    }
+
+    .buddies-carousel-next,
+    .team-carousel-next {
+        right: 10px;
     }
 }
 /* FOOTER */
@@ -823,4 +894,158 @@ footer{
 .Footer-Logo{
     width: 150px;
     
+}
+
+/* RESPONSIVE CODE */
+/* Mobile-First Responsive Design */
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.hamburger-menu.menu-open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger-menu.menu-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.menu-open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media screen and (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 30px;
+    }
+
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #FBEDE5;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    /* Main Scroll Section */
+    #MainScroll1 {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    #MainScroll1TextDiv {
+        max-width: 100%;
+        order: 2;
+    }
+
+    #HeadingText h1 {
+        font-size: 36px;
+    }
+
+    #ParaText {
+        font-size: 14px;
+    }
+
+    #MainScroll1PhotoDiv img {
+        max-width: 100%;
+        order: 1;
+    }
+
+    /* What We Do Section */
+    .accordion-content {
+        grid-template-columns: 1fr;
+    }
+
+    .image-section {
+        margin-top: 20px;
+    }
+
+    /* Statistics Section */
+    .stats-content {
+        padding: 20px;
+    }
+
+    .main-stat h1 {
+        font-size: 48px;
+    }
+
+    .stats {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .stat {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    /* Support Us Section */
+    .support-cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .support-card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .support-us-section h2{
+        text-align: center;
+    }
+
+    /* Footer */
+    .Footer-Main-Div {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .Footer-Cards {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Add tablet-specific styles if needed */
 }
