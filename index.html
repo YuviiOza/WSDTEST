@@ -15,15 +15,20 @@
 
     <body>
         <nav class="navbar">
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <div class="logo">
                 <img src="assets\Images\Logo.png" alt="Logo">
             </div>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#" class="cta">Adopt</a></li>
+                <li><a href="#AboutUsDiv">ABOUT</a></li>
+                <li><a href="#What-We-Do">WHAT WE DO</a></li>
+                <li><a href="#Contact-Us">CONTACT</a></li>
+                <li><a href="#" class="cta">DONATE</a></li>
+                <li><a href="#Adopt-Us" class="cta">Adopt</a></li>
             </ul>
         </nav>
         <!-- MAIN SCROLL 1 -->
@@ -45,7 +50,7 @@
                 </div>
             </div>
             <div id="MainScroll1PhotoDiv">
-                <img src="assets\Images\BannerDog.png">
+                <img src="assets\Images\Banner2.png">
             </div>
         </div>
         <!-- SECOND SCROLL  -->
@@ -60,131 +65,51 @@
                 </div>
             </div>
         </div> -->
-        <div class="what-we-do">
-            <div class="section-heading">What We Do</div>
-
-            <div class="accordion-container">
-                <!-- Mass Sterilisation (Initially Open) -->
-                <div class="accordion-item active" onclick="toggleAccordion(this)">
-                    <div class="accordion-header">Mass Sterilisation</div>
-                    <div class="accordion-content">
-                        <div class="text-section">
-                            <h2>Mass Sterilisation</h2>
-                            <p>Our sterilisation program follows WHO and Animal Welfare Board guidelines...</p>
-                            <span class="read-more">Know More</span>
-                        </div>
-                        <div class="image-section">
-                            <img src="assets\Images\mass-steralisation.png" alt="Mass Sterilisation">
-                        </div>
-                    </div>
+        <!-- ABOUT US -->
+        <div id="AboutUsDiv">
+            <div class="AboutUsPic">
+                <img src="assets\Images\AboutUsPic.png">
+            </div>
+            <div class="AboutUsText">
+                <div class="AboutUsHeading">
+                    <h1 style="font-weight: bolder;">About Us</h1>
                 </div>
-
-                <!-- Rabies Vaccination -->
-                <div class="accordion-item" onclick="toggleAccordion(this)">
-                    <div class="accordion-header">Rabies Vaccination</div>
-                    <div class="accordion-content">
-                        <div class="text-section">
-                            <h2>Rabies Vaccination</h2>
-                            <p>Providing free rabies vaccination to street dogs to prevent rabies outbreaks...</p>
-                            <span class="read-more">Know More</span>
-                        </div>
-                        <div class="image-section">
-                            <img src="assets/rabies-vaccination.jpg" alt="Rabies Vaccination">
-                        </div>
-                    </div>
+                <div class="AboutUsPara">
+                    <p>Welfare for Stray Dogs is a non-profit trust dedicated to protecting and improving the lives of
+                        Mumbai's street dogs.
+                        Since 1985, we have been working tirelessly to provide rescue, medical care, sterilization, and
+                        vaccination programs
+                        that create a safer environment for both dogs and people.<br><br>Our mission began with stopping
+                        the
+                        mass culling of street
+                        dogs, and today, we continue to advocate for humane and sustainable solutions. Through our
+                        sterilization program,
+                        community engagement, and compassionate care, we have made a lasting impact across the city—from
+                        Cuffe Parade to Malad
+                        and Sion.</p>
                 </div>
-
-                <!-- OPD -->
-                <div class="accordion-item" onclick="toggleAccordion(this)">
-                    <div class="accordion-header">OPD</div>
-                    <div class="accordion-content">
-                        <div class="text-section">
-                            <h2>OPD</h2>
-                            <p>Our Outpatient Department provides medical treatment for stray animals in need...</p>
-                            <span class="read-more">Know More</span>
-                        </div>
-                        <div class="image-section">
-                            <img src="assets/opd.jpg" alt="OPD">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- On-site First Aid -->
-                <div class="accordion-item" onclick="toggleAccordion(this)">
-                    <div class="accordion-header">On-site First Aid</div>
-                    <div class="accordion-content">
-                        <div class="text-section">
-                            <h2>On-site First Aid</h2>
-                            <p>Emergency first aid treatment provided to injured street animals...</p>
-                            <span class="read-more">Know More</span>
-                        </div>
-                        <div class="image-section">
-                            <img src="assets/first-aid.jpg" alt="On-site First Aid">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Health Care -->
-                <div class="accordion-item" onclick="toggleAccordion(this)">
-                    <div class="accordion-header">Health Care</div>
-                    <div class="accordion-content">
-                        <div class="text-section">
-                            <h2>Health Care</h2>
-                            <p>Ensuring proper medical care for injured and sick animals...</p>
-                            <span class="read-more">Know More</span>
-                        </div>
-                        <div class="image-section">
-                            <img src="assets/health-care.jpg" alt="Health Care">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Education -->
-                <div class="accordion-item" onclick="toggleAccordion(this)">
-                    <div class="accordion-header">Education</div>
-                    <div class="accordion-content">
-                        <div class="text-section">
-                            <h2>Education</h2>
-                            <p>Raising awareness about animal welfare among the community...</p>
-                            <span class="read-more">Know More</span>
-                        </div>
-                        <div class="image-section">
-                            <img src="assets/education.jpg" alt="Education">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Adoption -->
-                <div class="accordion-item" onclick="toggleAccordion(this)">
-                    <div class="accordion-header">Adoption</div>
-                    <div class="accordion-content">
-                        <div class="text-section">
-                            <h2>Adoption</h2>
-                            <p>Helping stray animals find forever homes through responsible adoption...</p>
-                            <span class="read-more">Know More</span>
-                        </div>
-                        <div class="image-section">
-                            <img src="assets/adoption.jpg" alt="Adoption">
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
-
+        <!-- CTA SECTION -->
+        <div class="Cta-Section" id="Adopt-Us">
+            <div class="Cta-Section-Heading">
+                100 wagging tails are waiting for their forever home. Could yours be one of them?
+            </div>
+            <button class="Cta-Section-Btn">Adopt A friend</>
+        </div>
         <!-- STATISTICS -->
         <section id="stats-section">
             <div class="stats-content">
                 <!-- Left-side Main Count -->
                 <div class="main-stat">
-                    <h1><span class="count" data-target="150000">0</span>*</h1>
+                    <h1><span style="font-size: 10rem" class=" count" data-target="150000">0</span>*</h1>
                     <p>Lives Touched</p>
                 </div>
 
                 <!-- Bottom Stats -->
                 <div class="stats">
                     <div class="stat">
-                        <h2><span class="count" data-target="56500">0</span></h2>
+                        <h2><span class="count" data-target="56500" ;">0</span></h2>
                         <p>Sterilised</p>
                     </div>
                     <div class="stat">
@@ -202,6 +127,170 @@
                 </div>
             </div>
         </section>
+
+        <!-- WHAT WE DO -->
+        <div class="what-we-do" id="What-We-Do">
+            <div class="section-heading">What We Do</div>
+
+            <div class="accordion-container">
+                <!-- Mass Sterilisation (Initially Open) -->
+                <div class="accordion-item active" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">Mass Sterilisation</div>
+                    <div class="accordion-content">
+                        <div class="text-section">
+                            <h2>Mass </br> Sterilisation</h2>
+                            <div class="What-We-Do-Card-Line"></div>
+                            <p>Our sterilisation program, based in a Mumbai Municipal Corporation centre, follows WHO
+                                and Animal Welfare Board
+                                guidelines. BMC staff, our team, and volunteers bring in street dogs for surgery.
+                                Surgeons sterilise and notch ears for ID, vaccinating each dog before release after a
+                                7-day recovery. Citizen
+                                involvement helps reduce human-canine conflict, with visible impact from Cuffe Parade to
+                                Mahim/Sion.</p>
+                            <span class="read-more">Know More</span>
+                        </div>
+                        <div class="image-section">
+                            <img src="assets\Images\mass-steralisation.png" alt="Mass Sterilisation">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rabies Vaccination -->
+                <div class="accordion-item" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">Rabies Vaccination</div>
+                    <div class="accordion-content">
+                        <div class="text-section">
+                            <h2>Rabies</br>Vaccination</h2>
+                            <div class="What-We-Do-Card-Line"></div>
+                            <p>Our sterilisation program, based in a Mumbai Municipal Corporation centre, follows WHO
+                                and Animal Welfare Board
+                                guidelines. BMC staff, our team, and volunteers bring in street dogs for surgery.
+                                Surgeons sterilise and notch ears for ID, vaccinating each dog before release after a
+                                7-day recovery. Citizen
+                                involvement helps reduce human-canine conflict, with visible impact from Cuffe Parade to
+                                Mahim/Sion.</p>
+                            <span class="read-more">Know More</span>
+                        </div>
+                        <div class="image-section">
+                            <img src="assets\Images\mass-steralisation.png" alt="Rabies Vaccination">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OPD -->
+                <div class="accordion-item" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">OPD</div>
+                    <div class="accordion-content">
+                        <div class="text-section">
+                            <h2>OPD</h2>
+                            <div class="What-We-Do-Card-Line"></div>
+                            <p>Our sterilisation program, based in a Mumbai Municipal Corporation centre, follows WHO
+                                and Animal Welfare Board
+                                guidelines. BMC staff, our team, and volunteers bring in street dogs for surgery.
+                                Surgeons sterilise and notch ears for ID, vaccinating each dog before release after a
+                                7-day recovery. Citizen
+                                involvement helps reduce human-canine conflict, with visible impact from Cuffe Parade to
+                                Mahim/Sion.</p>
+                            <span class="read-more">Know More</span>
+                        </div>
+                        <div class="image-section">
+                            <img src="assets\Images\mass-steralisation.png" alt="OPD">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- On-site First Aid -->
+                <div class="accordion-item" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">On-site First Aid</div>
+                    <div class="accordion-content">
+                        <div class="text-section">
+                            <h2>On-site </br>First Aid</h2>
+                            <div class="What-We-Do-Card-Line"></div>
+                            <p>Our sterilisation program, based in a Mumbai Municipal Corporation centre, follows WHO
+                                and Animal Welfare Board
+                                guidelines. BMC staff, our team, and volunteers bring in street dogs for surgery.
+                                Surgeons sterilise and notch ears for ID, vaccinating each dog before release after a
+                                7-day recovery. Citizen
+                                involvement helps reduce human-canine conflict, with visible impact from Cuffe Parade to
+                                Mahim/Sion.</p>
+                            <span class="read-more">Know More</span>
+                        </div>
+                        <div class="image-section">
+                            <img src="assets\Images\mass-steralisation.png" alt="On-site First Aid">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Care -->
+                <div class="accordion-item" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">Health Care</div>
+                    <div class="accordion-content">
+                        <div class="text-section">
+                            <h2>Health Care</h2>
+                            <div class="What-We-Do-Card-Line"></div>
+                            <p>Our sterilisation program, based in a Mumbai Municipal Corporation centre, follows WHO
+                                and Animal Welfare Board
+                                guidelines. BMC staff, our team, and volunteers bring in street dogs for surgery.
+                                Surgeons sterilise and notch ears for ID, vaccinating each dog before release after a
+                                7-day recovery. Citizen
+                                involvement helps reduce human-canine conflict, with visible impact from Cuffe Parade to
+                                Mahim/Sion.</p>
+                            <span class="read-more">Know More</span>
+                        </div>
+                        <div class="image-section">
+                            <img src="assets\Images\mass-steralisation.png" alt="Health Care">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="accordion-item" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">Education</div>
+                    <div class="accordion-content">
+                        <div class="text-section">
+                            <h2>Education</h2>
+                            <div class="What-We-Do-Card-Line"></div>
+                            <p>Our sterilisation program, based in a Mumbai Municipal Corporation centre, follows WHO
+                                and Animal Welfare Board
+                                guidelines. BMC staff, our team, and volunteers bring in street dogs for surgery.
+                                Surgeons sterilise and notch ears for ID, vaccinating each dog before release after a
+                                7-day recovery. Citizen
+                                involvement helps reduce human-canine conflict, with visible impact from Cuffe Parade to
+                                Mahim/Sion.</p>
+                            <span class="read-more">Know More</span>
+                        </div>
+                        <div class="image-section">
+                            <img src="assets\Images\mass-steralisation.png" alt="Education">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adoption -->
+                <div class="accordion-item" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">Adoption</div>
+                    <div class="accordion-content">
+                        <div class="text-section">
+                            <h2>Adoption</h2>
+                            <div class="What-We-Do-Card-Line"></div>
+                            <p>Our sterilisation program, based in a Mumbai Municipal Corporation centre, follows WHO
+                                and Animal Welfare Board
+                                guidelines. BMC staff, our team, and volunteers bring in street dogs for surgery.
+                                Surgeons sterilise and notch ears for ID, vaccinating each dog before release after a
+                                7-day recovery. Citizen
+                                involvement helps reduce human-canine conflict, with visible impact from Cuffe Parade to
+                                Mahim/Sion.</p>
+                            <span class="read-more">Know More</span>
+                        </div>
+                        <div class="image-section">
+                            <img src="assets\Images\mass-steralisation.png" alt="Adoption">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
         <!-- SUPPORT US SECTION -->
         <section class="support-us-section">
             <div class="support-us-content">
@@ -231,7 +320,7 @@
 
                     <div class="support-card">
                         <div class="support-icon">
-                            <img src="assets\Icons\Donation.png" alt="Adopt Icon">
+                            <img src="assets\Icons\Kennel.png" alt="Adopt Icon">
                         </div>
                         <h3>Adopt a Buddy</h3>
                         <p>Love for animals is of course what drives volunteers to WSD. But more importantly, it is the
@@ -255,7 +344,7 @@
              </div>
 
         </Div> -->
-        <section class="meet-buddies-section">
+        <div class="meet-buddies-section">
             <h2>Meet Our Buddies</h2>
             <div class="buddies-carousel-container">
                 <div class="buddies-carousel-track">
@@ -338,9 +427,9 @@
                 <button class="buddies-carousel-prev">&#10094;</button>
                 <button class="buddies-carousel-next">&#10095;</button>
             </div>
-        </section>
-
         </div>
+
+        <!-- </div> -->
         <!-- OUR TEAM -->
         <section class="our-team-section">
             <div class="team-carousel-container">
