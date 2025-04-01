@@ -16,7 +16,8 @@
 /* Navbar */
 .navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 1% 5%;
     align-items: center;
     /* padding: 15px 4%;  CAN BE USED LATER */ 
     background-color: #FBEDE5;
@@ -124,48 +125,92 @@
 #MainScroll1 {
     display: flex;
     flex-direction: row;
-    align-items: center; /* Centers vertically */
+    align-items: center;
     justify-content: space-around;
-    /* padding-left: 100%; */
     background-color: #FFBE3D;
     min-height: 500px;
     border-radius: 0px 0px 0px 150px;
-    /* padding: 60px 8%; */
-    /* padding-left: 50px;  */
-    /* gap: 10px;  */
-    max-width: 1400px; /* Ensures it doesn't stretch too much on large screens */
-    margin: 0 auto; /* Centers the entire section */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4% 5%;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Text Container */
 #MainScroll1TextDiv {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 50%;
+    z-index: 2;
 }
+
+#MainScroll1PhotoDiv {
+    position: relative;
+    width: 50%;
+    /* height: 951px; */
+    display: flex;
+    /* justify-content: flex-end; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* #MainScroll1PhotoDiv::before {
+    content: '';
+    position: absolute;
+    right: -50px;
+    margin-top: 100;
+    top: -50px;
+    width: 500px;
+    height: 500px;
+    background-color: #FF9900;
+    /* border-radius: 50%; 
+    z-index: 1;
+} */
+
+#MainScroll1PhotoDiv img {
+    max-width: 80%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    border-radius: 30px;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Floating Animation */
+/* @keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+} */
 
 /* Heading */
 #HeadingText h1 {
     color: #000;
     font-size: 80px;
-    /* font-weight: 800; */
-    font-weight:bolder;
+    font-weight: bolder;
     line-height: 1.1;
+    margin-bottom: 20px;
 }
 
 /* Paragraph */
 #ParaText {
     font-size: 16px;
     font-weight: 400;
-    margin: 10px 0;
+    margin-bottom: 20px;
+    color: #333;
 }
 
 /* CTA Button */
 #CtaBtnText button {
     display: flex;
     width: 140px;
-    padding: 14px ;
+    padding: 14px;
     justify-content: center;
     align-items: center;
     border-radius: 30px;
@@ -176,43 +221,30 @@
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 #CtaBtnText button:hover {
     background: #d66c00;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.2);
 }
 
-/* Image Container */
-#MainScroll1PhotoDiv{
-    /* width: 100%; */
-
-}
-#MainScroll1PhotoDiv img {
-    max-width: 80%; /* Adjusted for better responsiveness */
-    height: auto;
-}
-
-/* 🔹 Responsive Design */
-@media (max-width: 1280px) { /* For smaller laptops */
-    #MainScroll1 {
-        padding: 50px 6%;
-        gap: 40px;
-    }
-
+/* Responsive Design */
+@media (max-width: 1280px) {
     #HeadingText h1 {
         font-size: 70px;
     }
 
-    #ParaText {
-        font-size: 18px;
-    }
-
-    #MainScroll1PhotoDiv img {
-        max-width: 420px;
+    #MainScroll1PhotoDiv::before {
+        width: 400px;
+        height: 400px;
+        right: -30px;
+        top: -30px;
     }
 }
 
-@media (max-width: 1024px) { /* For tablets & smaller laptops */
+@media (max-width: 1024px) {
     #MainScroll1 {
         flex-direction: column;
         text-align: center;
@@ -220,32 +252,34 @@
         border-radius: 0px 0px 100px 100px;
     }
 
-    #MainScroll1TextDiv {
+    #MainScroll1TextDiv,
+    #MainScroll1PhotoDiv {
         max-width: 100%;
+        width: 100%;
         align-items: center;
+    }
+
+    #MainScroll1PhotoDiv::before {
+        width: 300px;
+        height: 300px;
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -50%);
     }
 
     #HeadingText h1 {
         font-size: 60px;
     }
-
-    #ParaText {
-        font-size: 17px;
-    }
-
-    #MainScroll1PhotoDiv img {
-        max-width: 100%;
-        height: auto;
-    }
 }
 
-@media (max-width: 600px) { /* For mobile */
+@media (max-width: 600px) {
     #HeadingText h1 {
         font-size: 45px;
     }
 
-    #ParaText {
-        font-size: 16px;
+    #MainScroll1PhotoDiv::before {
+        width: 250px;
+        height: 250px;
     }
 
     #CtaBtnText button {
@@ -254,6 +288,113 @@
         font-size: 14px;
     }
 }
+/* ABOUT US */
+#AboutUsDiv {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+    gap: 50px;
+    padding: 50px 10px;
+}
+
+.AboutUsPic {
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    /* background-image: url('assets\Images\AboutUsPic.png'); Replace with your image path */
+    /* background-size: cover; */
+    /* background-position: center; */
+    border-radius: 30px; /* Rounded corners */
+    margin-bottom: 10%;
+}
+
+.AboutUsText {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-right: 2%;
+}
+
+.AboutUsHeading {
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+    position: relative;
+}
+
+.AboutUsHeading::before {
+    /* content: "About Us"; */
+}
+
+.AboutUsPara {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+    position: relative;
+}
+
+.AboutUsPara::before {
+    /* content: "Welfare for Stray Dogs is a non-profit trust dedicated to protecting and improving the lives of Mumbai's street dogs. Since 1985, we have been working tirelessly to provide rescue, medical care, sterilization, and vaccination programs that create a safer environment for both dogs and people.\n\nOur mission began with stopping the mass culling of street dogs, and today, we continue to advocate for humane and sustainable solutions. Through our sterilization program, community engagement, and compassionate care, we have made a lasting impact across the city—from Cuffe Parade to Malad and Sion."; */
+    white-space: pre-wrap;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #AboutUsDiv {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .AboutUsPic {
+        height: 300px;
+    }
+
+    .AboutUsHeading {
+        font-size: 36px;
+    }
+
+    .AboutUsPara {
+        font-size: 16px;
+    }
+}
+/* CTA SECTION */
+.Cta-Section{
+    background-color: #FFBE3D;
+    width: 100%;
+    height: 238px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20%;
+}
+.Cta-Section-Heading{
+    color: #000;
+    text-align: center;
+    font-family: Duplet;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 41px; /* 136.667% */
+}
+.Cta-Section-Btn{
+    display: flex;
+    width: 173px;
+    padding: 13px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    background: #F58802;
+    margin-top: 3%;
+    color: #000;
+    border: none;
+}
+.Cta-Section-Btn:hover{
+    background-color: #e65c00;
+}
+
 /* WHAT WE DO */
 
 /* Main Container */
@@ -275,13 +416,14 @@
 .accordion-container {
     display: grid;
     gap: 10px;
+    /* border-radius: 50%; */
 }
 
 /* Accordion Items */
 .accordion-item {
     background-color: white;
     border: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: 25px;
     padding: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -307,7 +449,7 @@
 /* Main Content (Initially Hidden) */
 .accordion-content {
     display: none;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     align-items: center;
     background-color: #ff9000;
     padding: 20px;
@@ -329,14 +471,27 @@
 /* Text Section */
 .text-section {
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-content: space-between;
+    color: #000;
+    padding-right: 21%;
 }
-
+.text-section h2{
+    font-weight: bolder;
+}
 /* Image Section */
+.image-section{
+    display: flex;
+    justify-content: right;
+}
 .image-section img {
-    /* width: 50%; */
+    width: 100%;
     border-radius: 10px;
     margin-bottom: 0;
-    height: 50%;
+    height: 20%;
+    /* display: flex; */
     /* margin-left: 200px; */
 }
 
@@ -346,6 +501,14 @@
     cursor: pointer;
     color: black;
     font-weight: bold;
+    margin-top: 10%;
+}
+.What-We-Do-Card-Line{
+    display: flex;
+    height: 1px;
+    background-color: #000;
+    margin-top: 4%;
+    margin-bottom: 2%;
 }
 
 .read-more:hover {
@@ -366,11 +529,9 @@
     justify-content: center;
     /* padding-left: 10%; Moves main count to left */
     /* text-align: left; */
-    color: white;
-
-    
-    
+    color: white;    
 }
+
 
 .stats-content {
     display: flex;
@@ -379,16 +540,23 @@
     width: 100%;
     height: 100%;
     max-width: 1300px;
-    background-image: url("assets\Images\StatsBackground.png") no-repeat center center/cover;
+    /* background-image: url("assets\Images\StatsBackground.png") no-repeat center center/cover; */
+    /* background-image: url("assets/Images/StatsBackground.png") no-repeat center center/cover; */
+    /* background-image: url("../assets/Images/StatsBackground.png") no-repeat center center/cover; */
+    /* background-image: url("/assets/Images/StatsBackground.png") no-repeat center center/cover; */
+    /* background-color: black; */
+    padding-left: 2.5%; 
+    background-image: url("assets/Images/StatsBackground.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     background-color: black;
-    padding-left: 2.5%;
-    
 }
 
 /* Left Side - Main Heading */
-.main-stat {
-    /* margin-bottom: 40px; */
-}
+/* .main-stat {
+    /* margin-bottom: 40px; 
+}*/
 
 .main-stat h1 {
     font-size: 80px;
@@ -399,7 +567,9 @@
     font-size: 24px;
     margin-top: -10px;
 }
-
+.main-stat{
+    padding-left: 5%;
+}
 /* Bottom Stats */
 .stats {
     display: flex;
@@ -407,6 +577,7 @@
     flex-direction: row;
     width: 100%;
     max-width: 1200px;
+    padding: 0% 5%;
     /* margin-top: auto; */
     /* justify-content: center; */
 }
@@ -423,6 +594,9 @@
 
 .stat p {
     font-size: 18px;
+}
+.count{
+    font-size: 3rem;
 }
 /* SUPPORT US */
 
@@ -462,6 +636,7 @@
 .support-card {
     background-color: white;
     border-radius: 15px;
+    border: 10px solid red;
     padding: 30px;
     width: 350px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
@@ -503,7 +678,7 @@
     background-color: #ff9900;
     color: white;
     border: none;
-    padding: 12px 30px;
+    padding: 12px 80px;
     border-radius: 25px;
     font-weight: bold;
     cursor: pointer;
@@ -545,11 +720,14 @@
 .support-card {
     background-color: white;
     border-radius: 15px;
-    padding: 60px 30px 30px; /* Increased top padding */
+    padding: 80px 30px 30px; /* Increased top padding */
     width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-    border: 2px solid #e0e0e0; /* Added border */
+    border: 2px solid #000000; /* Added border */
     position: relative; /* For icon positioning */
 }
 
@@ -560,13 +738,13 @@
     transform: translateX(-50%);
     width: 100px;
     height: 100px;
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 10; /* Ensures icon is on top */
-    border: 2px solid white; /* Creates a white border effect */
+    border: 2px solid rgb(0, 0, 0); /* Creates a white border effect */
     box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Adds depth */
 }
 
@@ -579,8 +757,14 @@
 
 /* MEET OUR BUDDIES */
 .meet-buddies-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto; /* Centers the section while keeping heading left */
+    /* align-items: center; */
     text-align: left;
-    padding: 50px 20px;
+    padding: 50px 50px;
+    /* padding-left: 100px; */
     /* background-color: #f9f9f9; */
     max-width: 1400px;
     /* margin: 0 auto; */
@@ -590,11 +774,13 @@
     font-size: 2.5rem;
     margin-bottom: 40px;
     color: #333;
+    padding-left: 1%;
 }
 
 .buddies-carousel-container {
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
+    padding: 1% 1%;
 }
 
 .buddies-carousel-track {
@@ -719,6 +905,7 @@
     max-width: 1400px; /* Added to control width */
     margin: 0 auto; /* Centers the section while keeping heading left */
     text-align: left;
+    padding: 20px 50px;
     /* padding: 50px 20px; */
     /* background-color: #f9f9f9; */
     background-color: white;
@@ -733,7 +920,7 @@
 
 .team-carousel-container {
     position: relative;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -774,7 +961,8 @@
 }
 
 .team-member-details {
-    padding: 20px;
+    /* padding: 20px; */
+    padding-top: 5%;
     text-align: center;
     text-align: left;
 }
