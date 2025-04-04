@@ -80,7 +80,7 @@
 .hamburger-menu {
     display: none; /* Hidden by default for desktop */
     flex-direction: column;
-    gap: 6px;
+    /* gap: 6px; */
     cursor: pointer;
     z-index: 1000;
 }
@@ -105,6 +105,7 @@
     .logo {
         /* Adjust logo size if needed */
         max-width: 120px; /* Adjust based on your logo size */
+        /* height: 10px; */
     }
 
     .hamburger-menu {
@@ -195,7 +196,7 @@
     align-items: center;
     justify-content: space-around;
     background-color: #FFBE3D;
-    min-height: 500px;
+    height: 600px;
     border-radius: 0px 0px 0px 150px;
     max-width: 1400px;
     margin: 0 auto;
@@ -203,6 +204,10 @@
     position: relative;
     overflow: hidden;
 }
+.MobileBanner{
+    visibility: hidden;
+    display: none;
+    }
 
 #MainScroll1TextDiv {
     display: flex;
@@ -284,6 +289,7 @@
         font-size: 70px;
     }
 
+
     #MainScroll1PhotoDiv::before {
         width: 400px;
         height: 400px;
@@ -293,13 +299,14 @@
 }
 
 @media (max-width: 1024px) {
+    
     #MainScroll1 {
         flex-direction: column;
         text-align: center;
         padding: 40px 5%;
         border-radius: 0px 0px 100px 100px;
     }
-
+    
     
     #MainScroll1TextDiv{
         visibility: hidden;
@@ -328,29 +335,31 @@
     }
 }
 
-/* @media (max-width: 600px) {
-    #HeadingText h1 {
-        font-size: 45px;
-    }
-
-    #MainScroll1PhotoDiv::before {
-        width: 250px;
-        height: 250px;
-    }
-
-    #CtaBtnText button {
-        width: 140px;
-        padding: 12px;
-        font-size: 14px;
-    }
-} */
 @media screen and (max-width: 720px){
      /* Main Scroll Section */
     #MainScroll1 {
         flex-direction: column;
         text-align: center;
-        padding: 20px;
+        height: 300px;
+        /* padding: 20px; */
+        /* height: 50px; */
+        /* height: 50px; */
     }
+.DesktopBanner{
+    visibility: hidden;
+    display: none;
+}
+.MobileBanner{
+    visibility:visible;
+    display:block;
+    /* height: 10%; */
+    }
+#MainScroll1PhotoDiv img {
+    order: 1;
+    height: 300px;
+    /* height: 10px; */
+}
+
 
     #MainScroll1TextDiv {
         /* max-width: 100%; */
@@ -367,14 +376,14 @@
     #CtaBtnText2 button {
     display: flex;
     width: 100px;
-    padding: 7px;
+    padding: 10px;
     justify-content: center;
     align-items: center;
     border-radius: 30px;
     background: #F58802;
     border: none;
     color: white;
-    font-size: 10px;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s ease;
@@ -388,25 +397,19 @@
 }
 #HeadingText2 H1{
     font-weight: bolder;
-    font-size: 38PX;
+    font-size: 40PX;
 }
 #ParaText2 p{
     font-size: 16px;
 }
+#HeadingText h1 {
+    font-size: 36px;
+}
 
+#ParaText {
+    font-size: 14px;
+}
 
-    #HeadingText h1 {
-        font-size: 36px;
-    }
-
-    #ParaText {
-        font-size: 14px;
-    }
-
-    #MainScroll1PhotoDiv img {
-        max-width: 100%;
-        order: 1;
-    }
 }
 
 /* ABOUT US */
@@ -479,12 +482,12 @@
     }
 
     .AboutUsHeading h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
         text-align: left;
     }
 
     .AboutUsPara p {
-        font-size: 1rem;
+        font-size: 0.9rem;
         text-align: left;
     }
 }
@@ -499,7 +502,7 @@
     }
 
     .AboutUsHeading h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
         text-align: left;
     }
     .AboutUsPara p {
@@ -567,6 +570,7 @@
     .Cta-Section {
         padding: 1.5rem 1rem;
         min-height: 180px;
+        margin: 10% 0;
     }
     
     .Cta-Section-Heading {
@@ -1466,8 +1470,9 @@ footer{
         font-size: 14px;
         margin: 0 15px;
         white-space: nowrap;
-        margin-right: 60px;
-        margin-top: 1.5%;
+        margin-right: 50px;
+        /* margin-top: 1; */
+        margin-bottom: 1%;
     }
 
     /* Adjust navbar layout to accommodate the new button */
