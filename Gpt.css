@@ -366,15 +366,15 @@
     }
     #CtaBtnText2 button {
     display: flex;
-    width: 140px;
-    padding: 14px;
+    width: 100px;
+    padding: 7px;
     justify-content: center;
     align-items: center;
     border-radius: 30px;
     background: #F58802;
     border: none;
     color: white;
-    font-size: 16px;
+    font-size: 10px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s ease;
@@ -388,10 +388,10 @@
 }
 #HeadingText2 H1{
     font-weight: bolder;
-    font-size: 72PX;
+    font-size: 36PX;
 }
 #ParaText2 p{
-    font-size: 20px;
+    font-size: 10px;
 }
 
 
@@ -416,110 +416,184 @@
     max-width: 1400px;
     margin: 0 auto;
     align-items: center;
-    gap: 50px;
-    padding: 50px 10px;
+    gap: 30px;
+    padding: 30px 20px;
 }
 
 .AboutUsPic {
     width: 100%;
-    height: 300px; /* Adjust height as needed */
-    /* background-image: url('assets\Images\AboutUsPic.png'); Replace with your image path */
-    /* background-size: cover; */
-    /* background-position: center; */
-    border-radius: 30px; /* Rounded corners */
-    margin-bottom: 10%;
+    height: auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.AboutUsPic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .AboutUsText {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding-right: 2%;
+    gap: 15px;
 }
 
-.AboutUsHeading {
-    font-size: 48px;
-    font-weight: bold;
+.AboutUsHeading h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
     color: #333;
-    position: relative;
+    margin: 0;
 }
 
-.AboutUsHeading::before {
-    /* content: "About Us"; */
-}
-
-.AboutUsPara {
-    font-size: 18px;
+.AboutUsPara p {
+    font-size: 1.1rem;
     line-height: 1.6;
     color: #666;
-    position: relative;
-}
-
-.AboutUsPara::before {
-    /* content: "Welfare for Stray Dogs is a non-profit trust dedicated to protecting and improving the lives of Mumbai's street dogs. Since 1985, we have been working tirelessly to provide rescue, medical care, sterilization, and vaccination programs that create a safer environment for both dogs and people.\n\nOur mission began with stopping the mass culling of street dogs, and today, we continue to advocate for humane and sustainable solutions. Through our sterilization program, community engagement, and compassionate care, we have made a lasting impact across the city—from Cuffe Parade to Malad and Sion."; */
-    white-space: pre-wrap;
+    margin: 0;
 }
 
 /* Responsive Design */
+@media screen and (max-width: 1024px) {
+    #AboutUsDiv {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 25px;
+    }
+    
+    .AboutUsHeading h1 {
+        font-size: 2rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     #AboutUsDiv {
         grid-template-columns: 1fr;
-        gap: 30px;
+        text-align: center;
+        padding: 20px 15px;
     }
 
     .AboutUsPic {
-        height: 300px;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
-    .AboutUsHeading {
-        font-size: 36px;
+    .AboutUsHeading h1 {
+        font-size: 1.8rem;
+        text-align: left;
     }
 
-    .AboutUsPara {
-        font-size: 16px;
+    .AboutUsPara p {
+        font-size: 1rem;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #AboutUsDiv {
+        padding: 15px 10px;
+    }
+
+    .AboutUsPic {
+        max-width: 100%;
+    }
+
+    .AboutUsHeading h1 {
+        font-size: 1.5rem;
+        text-align: left;
+    }
+    .AboutUsPara p {
+        text-align: left;
     }
 }
 /* CTA SECTION */
-.Cta-Section{
+.Cta-Section {
     background-color: #FFBE3D;
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    height: 238px;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 20%;
+    padding: 2rem;
+    box-sizing: border-box;
 }
-.Cta-Section-Heading{
+
+.Cta-Section-Heading {
     color: #000;
     text-align: center;
-    font-family: Duplet;
-    font-size: 30px;
-    font-style: normal;
+    font-family: 'Duplet', sans-serif;
+    font-size: 1.875rem; /* 30px */
     font-weight: 700;
-    line-height: 41px; /* 136.667% */
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 0 auto;
 }
-.Cta-Section-Btn{
-    display: flex;
-    width: 173px;
-    padding: 13px 20px;
+
+.Cta-Section-Btn {
+    display: inline-flex;
+    padding: 0.8rem 1.25rem;
     justify-content: center;
     align-items: center;
-    gap: 10px;
     border-radius: 30px;
     background: #F58802;
-    margin-top: 3%;
     color: #000;
     border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem;
 }
-.Cta-Section-Btn:hover{
+
+.Cta-Section-Btn:hover {
     background-color: #e65c00;
 }
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .Cta-Section {
+        padding: 2rem 1.5rem;
+    }
+    
+    .Cta-Section-Heading {
+        font-size: 1.625rem; /* 26px */
+    }
+}
+
 @media screen and (max-width: 768px) {
-    .Cta-Section{
-        padding: 10%;
+    .Cta-Section {
+        padding: 1.5rem 1rem;
+        min-height: 180px;
+    }
+    
+    .Cta-Section-Heading {
+        font-size: 1.375rem; /* 22px */
+    }
+    
+    .Cta-Section-Btn {
+        padding: 0.7rem 1.1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .Cta-Section {
+        padding: 1.25rem 0.75rem;
+        min-height: 160px;
+    }
+    
+    .Cta-Section-Heading {
+        font-size: 1.125rem; /* 18px */
+        line-height: 1.3;
+    }
+    
+    .Cta-Section-Btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.875rem;
+        margin-top: 1rem;
     }
 }
 
