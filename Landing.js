@@ -13,27 +13,83 @@ function toggleAccordion(element) {
 }
 
 // Counter Animation
+// document.addEventListener("DOMContentLoaded", () => {
+//     const counters = document.querySelectorAll(".count");
+
+//     counters.forEach(counter => {
+//         counter.innerText = "0";
+//         const updateCount = () => {
+//             const target = +counter.getAttribute("data-target");
+//             const current = +counter.innerText;
+//             const increment = target / 100; // Adjust speed
+
+//             if (current < target) {
+//                 counter.innerText = Math.ceil(current + increment);
+//                 setTimeout(updateCount, 20); // Speed of counting
+//             } else {
+//                 counter.innerText = target;
+//             }
+//         };
+//         updateCount();
+//     });
+
+// });
+
 document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll(".count");
+    const statsSection = document.getElementById("stats-section");
 
-    counters.forEach(counter => {
-        counter.innerText = "0";
-        const updateCount = () => {
-            const target = +counter.getAttribute("data-target");
-            const current = +counter.innerText;
-            const increment = target / 100; // Adjust speed
+    // Debug: Check if elements are found
+    console.log("Counters found:", counters.length);
+    console.log("Stats section found:", statsSection);
 
-            if (current < target) {
-                counter.innerText = Math.ceil(current + increment);
-                setTimeout(updateCount, 20); // Speed of counting
-            } else {
-                counter.innerText = target;
+    // Check if IntersectionObserver is supported
+    if (!('IntersectionObserver' in window)) {
+        console.log("IntersectionObserver not supported, starting counters immediately");
+        startCounters();
+        return;
+    }
+
+    function startCounters() {
+        counters.forEach(counter => {
+            counter.innerText = "0";
+            const updateCount = () => {
+                const target = +counter.getAttribute("data-target");
+                const current = +counter.innerText;
+                const increment = target / 100; // Adjust speed
+
+                if (current < target) {
+                    counter.innerText = Math.ceil(current + increment);
+                    setTimeout(updateCount, 20); // Speed of counting
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
+        });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        console.log("Observer triggered"); // Debug log
+        entries.forEach(entry => {
+            console.log("Entry intersecting:", entry.isIntersecting); // Debug log
+            if (entry.isIntersecting) {
+                console.log("Starting counters"); // Debug log
+                startCounters();
+                observer.unobserve(statsSection); // Stop observing after animation starts
             }
-        };
-        updateCount();
+        });
+    }, {
+        threshold: 0.3, // Reduced threshold for easier triggering
+        rootMargin: '0px 0px -100px 0px' // Trigger when section is 100px from bottom of viewport
     });
 
-}); // Added the missing closing bracket here
+    observer.observe(statsSection);
+});
+
+
+
+//  // Added the missing closing bracket here
 // Hamburger Menu Functionality
     // const hamburgerMenu = document.querySelector('.hamburger-menu');
     // const navLinks = document.querySelector('.nav-links');
